@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { Menu, X } from "lucide-react"; // ← ADD THIS
 import { Logo } from "./Atoms";
 import { useWallet } from "@/lib/wallet-context";
 import { useScrolled } from "@/lib/hooks";
@@ -106,12 +107,24 @@ export default function Navbar() {
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden"
-        onClick={() => setOpen(!open)}
-        style={{ fontSize: 24 }}
-      >
-        ☰
-      </button>
+  className="md:hidden"
+  onClick={() => setOpen(!open)}
+  style={{
+    background: "transparent",
+    border: `1px solid ${C.border}`,
+    borderRadius: 10,
+    padding: "8px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
+  {open ? (
+    <X size={20} color={C.text} />
+  ) : (
+    <Menu size={20} color={C.text} />
+  )}
+</button>
 
       {/* Mobile Dropdown */}
       {open && (
