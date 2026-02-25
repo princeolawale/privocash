@@ -6,11 +6,15 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; }
+
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   background: #06060A;
   color: #EEEDF4;
   font-family: 'Instrument Sans', sans-serif;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 ::selection { background: rgba(37,99,235,0.13); color: #EEEDF4; }
@@ -180,25 +184,26 @@ hr.dv { border:none; border-top:1px solid rgba(255,255,255,0.075); width:100%; }
   min-height: 100vh;
   padding-top: 68px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   position: relative;
   z-index: 3;
 }
-.split-left {
-  padding: 80px 64px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-right: 1px solid rgba(255,255,255,0.075);
-  position: relative;
-  overflow: hidden;
+
+@media (min-width: 1024px) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+  }
 }
+.split-left,
 .split-right {
-  padding: 80px 64px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  animation: pin .5s ease both;
+  padding: 48px 20px;
+}
+
+@media (min-width: 1024px) {
+  .split-left,
+  .split-right {
+    padding: 80px 64px;
+  }
 }
 
 /* ── Glow blob utility ── */
