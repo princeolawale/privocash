@@ -366,6 +366,5 @@ function LandingPage() {
 
 // ── Root ───────────────────────────────────────────────────────
 export default function Home() {
-  const [done, setDone] = useState(false);
-  return done ? <LandingPage/> : <IntroPage onEnter={() => setDone(true)}/>;
+  return <LandingPage />;
 }
