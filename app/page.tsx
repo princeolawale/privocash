@@ -242,8 +242,8 @@ function LandingPage() {
             Crypto Payments.
           </em>
         </h1>
-        <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          <div style={{ maxWidth: 460 }}>
+        <div className="flex justify-end">
+          <div className="max-w-115">
             <p
               className="rv"
               ref={r3 as React.RefObject<HTMLParagraphElement>}
@@ -269,37 +269,14 @@ function LandingPage() {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            position: "absolute",
-            bottom: 48,
-            left: 64,
-            right: 64,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-end",
-          }}
-        >
+        <div className="mt-8 flex justify-between items-end">
           <div>
-            <div className="lbl" style={{ color: C.accent, marginBottom: 6 }}>
-              Network Active
-            </div>
-            <div className="m" style={{ fontSize: 11, color: C.dim }}>
-              Block #21,450,812
-            </div>
+            <div className="lbl text-accent mb-1.5">Network Active</div>
+            <div className="m text-xs text-dim">Block #21,450,812</div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <span
-              style={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                background: C.ok,
-                animation: "pulse 2s infinite",
-                display: "inline-block",
-              }}
-            />
-            <span className="m" style={{ fontSize: 11, color: C.muted }}>
+          <div className="flex items-center gap-2">
+            <span className="size-1.5 rounded-[50%] bg-ok animate-[pulse 2s infinite] inline-block" />
+            <span className="m text-xs text-muted">
               All systems operational
             </span>
           </div>
@@ -339,7 +316,7 @@ function LandingPage() {
       </div>
 
       {/* ── STATS ── */}
-      <section className="md:mt-6 pb-8">
+      <section className="pb-8">
         <div
           className={`rv grid max-md:grid-rows-4 md:h-32 md:grid-cols-4 md:border-y md:border-l`}
           ref={r4 as React.RefObject<HTMLDivElement>}
@@ -516,45 +493,27 @@ function LandingPage() {
       </section>
 
       {/* ── HOW IT WORKS ── */}
-      <section className="pb-36">
-        <div className="rv" ref={r6 as React.RefObject<HTMLDivElement>}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-end",
-              marginBottom: 72,
-            }}
-          >
+      <section className="pb-32">
+        <div
+          className="rv flex justify-between items-end mb-18"
+          ref={r6 as React.RefObject<HTMLDivElement>}
+        >
+          <div>
             <div>
-              <span
-                className="lbl"
-                style={{ color: C.accent, display: "block", marginBottom: 16 }}
-              >
-                HOW IT WORKS
-              </span>
-              <h2
-                className="d"
-                style={{
-                  fontSize: "clamp(40px,5vw,72px)",
-                  fontWeight: 800,
-                  letterSpacing: "-.04em",
-                  color: C.text,
-                  lineHeight: 0.9,
-                }}
-              >
+              <span className="lbl block text-accent mb-4">HOW IT WORKS</span>
+              <h2 className="d text-4xl md:text-7xl font-extrabold text-text tracking-[-.04em] leading-[0.9]">
                 Simple steps to
                 <br />
                 seamless crypto
                 <br />
-                <em style={{ color: C.accent }}>payments.</em>
+                <em className="text-accent">payments.</em>
               </h2>
             </div>
-            <span className="m lbl">ERC-5564 STANDARD</span>
+            <span className="m lbl mt-2">ERC-5564 STANDARD</span>
           </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
+        <div className="grid max-lg:grid-rows-3 lg:grid-cols-3 gap-6 lg:gap-8">
           {[
             {
               n: "1",
@@ -626,89 +585,24 @@ function LandingPage() {
           ].map((step, i) => (
             <div
               key={i}
-              className="rv"
-              style={{
-                padding: "52px 48px",
-                borderLeft: i > 0 ? `1px solid ${C.border}` : "none",
-                borderTop: `1px solid ${C.border}`,
-                position: "relative",
-                overflow: "hidden",
-              }}
+              className="xrv py-6 px-5 rounded-lg md:py-13 md:px-12 max-md:border relative overflow-hidden"
             >
-              <div
-                className="d"
-                style={{
-                  position: "absolute",
-                  top: 24,
-                  right: 32,
-                  fontSize: 90,
-                  fontWeight: 800,
-                  color: C.accentDim,
-                  lineHeight: 1,
-                  userSelect: "none",
-                }}
-              >
+              <div className="d absolute top-6 right-8 text-8xl font-extrabold text-accent-dim leading-none select-none">
                 {step.n}
               </div>
-              <div
-                style={{
-                  width: 54,
-                  height: 54,
-                  borderRadius: 14,
-                  background: C.accentDim,
-                  border: `1px solid ${C.accentBrd}`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: 28,
-                }}
-              >
+              <div className="size-13.5 rounded-xl bg-accent-dim border border-accent-brd flex items-center justify-center mb-7">
                 {step.icon}
               </div>
-              <div
-                className="m lbl"
-                style={{ color: C.accent, marginBottom: 16 }}
-              >
-                STEP 0{step.n}
-              </div>
-              <h3
-                className="d"
-                style={{
-                  fontSize: 34,
-                  fontWeight: 700,
-                  letterSpacing: "-.03em",
-                  color: C.text,
-                  marginBottom: 18,
-                  lineHeight: 1.05,
-                }}
-              >
+              <div className="m lbl text-accent mb-4">STEP 0{step.n}</div>
+              <h3 className="d text-[34px] font-bold tracking-[-.03em] text-text mb-4.5 leading-[1.05]">
                 {step.title}
               </h3>
-              <p
-                style={{
-                  fontSize: 15,
-                  lineHeight: 1.82,
-                  color: C.muted,
-                  marginBottom: 28,
-                  fontWeight: 300,
-                }}
-              >
+              <p className="text-base leading-[1.82] text-muted mb-7 font-light">
                 {step.desc}
               </p>
-              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <span
-                  style={{
-                    width: 5,
-                    height: 5,
-                    background: C.accent,
-                    borderRadius: 1,
-                    display: "inline-block",
-                  }}
-                />
-                <span
-                  className="m"
-                  style={{ fontSize: 10, color: C.dim, letterSpacing: ".12em" }}
-                >
+              <div className="flex items-center gap-2">
+                <span className="size-1.25 bg-accent rounded-[1] inline-block" />
+                <span className="m text-[10px] text-dim tracking-[.123m]">
                   {step.tech}
                 </span>
               </div>
