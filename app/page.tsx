@@ -891,9 +891,9 @@ function LandingPage() {
             </div>
             <div style={{ minWidth: 320 }}>
               {[
-                { t: "Fiat On-Ramp", s: "Q2 2025" },
-                { t: "Fiat Off-Ramp", s: "Q3 2025" },
-                { t: "Cross-Chain Stealth", s: "Q4 2025" },
+                { t: "Fiat On-Ramp", s: "Q2 2026" },
+                { t: "Fiat Off-Ramp", s: "Q3 2026" },
+                { t: "Cross-Chain Stealth", s: "Q4 2026" },
                 { t: "Direct Bank Withdrawals", s: "2026" },
               ].map((r) => (
                 <div
@@ -1017,7 +1017,8 @@ function LandingPage() {
           }}
         >
           <span className="m lbl">
-            © 2025 PRIVO CASH — PRIVACY INFRASTRUCTURE FOR CRYPTO PAYMENTS
+            ©{new Date().getFullYear()} PRIVO CASH — PRIVACY INFRASTRUCTURE FOR
+            CRYPTO PAYMENTS
           </span>
           <span className="m lbl">
             NOT A MIXER · NOT CUSTODY · PRIVACY BY DESIGN
